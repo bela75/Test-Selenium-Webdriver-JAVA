@@ -5,6 +5,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -42,8 +43,16 @@ pageEstimerMesAllocations {
     @Test
     public
     void URLSITEWEB ( String url ) {
-        System.setProperty ( "webdriver.chrome.driver" , "../browser/ChromeDriver.81.0.4044.138" );
-        driver = new ChromeDriver ();
+        try {
+            System.setProperty ( "webdriver.chrome.driver" , "browser/ChromeDriver.83.0.4103.39" );
+            //System.setProperty ( "webdriver.firefox.driver" , "geckodriver-v0.25.0-macos" );
+
+            driver = new ChromeDriver ();
+            //driver = new FirefoxDriver ();
+        }
+        catch (Exception exception){
+            System.out.println ("La version du navigateur est erroné : "+exception);
+        }
         Dimension dimension = new Dimension ( 1280 , 1024 );
         driver.manage ().window ().setSize ( dimension );
         driver.get ( URL () );
