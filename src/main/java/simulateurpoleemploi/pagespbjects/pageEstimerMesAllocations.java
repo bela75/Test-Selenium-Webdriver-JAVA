@@ -42,7 +42,7 @@ pageEstimerMesAllocations {
     @Test
     public
     void URLSITEWEB ( String url ) {
-        System.setProperty ( "webdriver.chrome.driver" , "browser/ChromeDriver.81.0.4044.138" );
+        System.setProperty ( "webdriver.chrome.driver" , "../browser/ChromeDriver.81.0.4044.138" );
         driver = new ChromeDriver ();
         Dimension dimension = new Dimension ( 1280 , 1024 );
         driver.manage ().window ().setSize ( dimension );

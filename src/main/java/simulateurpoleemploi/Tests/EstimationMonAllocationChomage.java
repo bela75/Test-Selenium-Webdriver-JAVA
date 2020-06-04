@@ -22,6 +22,5 @@ class EstimationMonAllocationChomage {
         browser.ClickAjouterButton ();
         browser.ClickLancerEstimation ();
         browser.dureeDindemnisation();
-
     }
 }
