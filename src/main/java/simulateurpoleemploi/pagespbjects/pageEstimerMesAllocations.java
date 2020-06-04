@@ -44,11 +44,8 @@ pageEstimerMesAllocations {
     public
     void URLSITEWEB ( String url ) {
         try {
-            System.setProperty ( "webdriver.chrome.driver" , "browser/ChromeDriver.83.0.4103.39" );
-            //System.setProperty ( "webdriver.firefox.driver" , "geckodriver-v0.25.0-macos" );
-
+            System.setProperty ( "webdriver.chrome.driver" , "src/main/browser/ChromeDriver.83.0.4103.39" );
             driver = new ChromeDriver ();
-            //driver = new FirefoxDriver ();
         }
         catch (Exception exception){
             System.out.println ("La version du navigateur est erroné : "+exception);
