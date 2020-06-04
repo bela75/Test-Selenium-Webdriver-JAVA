@@ -5,7 +5,6 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -181,9 +180,15 @@ pageEstimerMesAllocations {
         WebElement elementdureeDindemnisation = returndureeDindemnisation ();
         String text = elementdureeDindemnisation.getText ();
         try {
+            System.out.println ( "***********************************************");
+            System.out.println ("Nombre de jours d'indemnisation par pole emploi");
+            System.out.println ( "***********************************************");
             Assert.assertEquals ( text , "638 jours." );
         } catch (AssertionError e) {
-            System.out.println ( "Durée d'indemnisation est erronée : +" + e );
+            System.out.println ( "=================================================");
+            System.out.println ( "Durée d'indemnisation est erronée :");
+            System.out.println ( e );
+            System.out.println ( "=================================================");
         } finally {
             driver.close ();
         }
